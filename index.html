@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DINGO FIX Reparación Móvil</title>
+<meta name="description" content="Ingeniería de precisión para tu tecnología. Especialistas en reparación de equipos móviles multimarca, microsoldadura y hardware certificado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Teko:wght@700&display=swap">
+<style>
+/* Plan: claro técnico. Papel + Tinta sostienen la lectura, el naranja solo marca detalles.
+   Layout: hero con video a sangre y velo de papel a la izquierda; resto en columnas de 1240px. */
+:root{
+  --ink:#0B0E14; --paper:#FFFFFF; --white:#FFFFFF;
+  --orange:#FF6600; --orange-fn:#FF6600; --orange-text:#FF6600;
+  --graphite:#3F4856; --mist:#5B6475;
+  --line:rgba(11,14,20,0.12);
+  --font:'Geo212','Arial Narrow','Helvetica Neue',sans-serif;
+  color-scheme:light;
+}
+@font-face{font-family:'Geo212';src:url(assets/fonts/Geometric212-Book.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Geo212';src:url(assets/fonts/Geometric212-Heavy.ttf) format('truetype');font-weight:700;font-style:normal;font-display:swap}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-weight:400;font-size:19px;line-height:1.45}
+img,video{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-weight:700;margin:0;text-wrap:balance}
+p{margin:0}
+[id]{scroll-margin-top:24px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 24px}
+.label{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:12px}
+.label::before{content:"";width:36px;height:2px;background:var(--orange-fn)}
+.ico{width:28px;height:28px;fill:none;stroke:var(--orange-fn);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:19px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:transparent;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--ink);color:var(--white)}
+.btn.solid{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.btn svg{width:22px;height:22px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:680px;overflow:hidden;background:var(--paper) url(assets/img/hero-poster.webp) center/cover no-repeat;display:flex;flex-direction:column}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 55%}
+.veil{position:absolute;inset:0;background:
+  linear-gradient(0deg,var(--paper) 0%,rgba(255,255,255,0) 26%),
+  radial-gradient(75% 85% at 50% 48%,rgba(255,255,255,.94) 0%,rgba(255,255,255,.88) 40%,rgba(255,255,255,.5) 72%,rgba(255,255,255,.12) 100%)}
+.top{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;padding-top:34px}
+.top img{height:50px;width:auto;display:block}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a.link{position:relative;padding:8px 0;text-decoration:none;color:var(--ink);font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:18px;letter-spacing:.08em;text-transform:uppercase}
+.nav a.link::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:14px;background:var(--orange-fn);transition:width .28s ease}
+.nav a.link::before{content:"";position:absolute;bottom:-3px;left:10px;width:8px;height:8px;border:1.6px solid var(--orange-fn);border-radius:50%;background:var(--paper);opacity:0;transition:left .28s ease,opacity .2s}
+.nav a.link:hover::after,.nav a.link:focus-visible::after{width:100%}
+.nav a.link:hover::before,.nav a.link:focus-visible::before{left:calc(100% - 8px);opacity:1}
+.social{display:flex;gap:10px}
+.sbtn{width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid rgba(11,14,20,.18);background:var(--white);transition:border-color .2s,transform .2s}
+.sbtn:hover{border-color:var(--ink);transform:translateY(-2px)}
+.sbtn svg{width:24px;height:24px}
+.brand{stroke:none}
+.b-wa{fill:#25D366}
+.b-ig{fill:url(#igGrad)}
+.b-mail{fill:#EA4335}
+.hero-body{position:relative;z-index:2;flex:1;display:flex;align-items:center;padding-top:56px;padding-bottom:70px}
+.hero-body{justify-content:center}
+.hero-body .copy{max-width:900px;text-align:center}
+.hero h1{font-family:'Teko','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(46px,5.9vw,88px);line-height:.95;letter-spacing:.006em;text-transform:uppercase;-webkit-text-stroke:.6px var(--ink);paint-order:stroke fill}
+.spec{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.spec-lead{font-size:clamp(19px,1.7vw,25px);line-height:1.15;color:var(--graphite)}
+.spec-word{justify-content:center;font-weight:700;font-size:clamp(34px,3.9vw,56px);line-height:1.08;color:var(--orange-text);min-height:1.08em;display:flex;align-items:center;white-space:nowrap}
+.caret{display:inline-block;width:.07em;height:.82em;margin-left:.06em;background:var(--orange-fn);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+
+/* ---------- CINTA DE MARCAS ---------- */
+.tick-wrap{margin-top:28px;position:relative;z-index:3}
+.ticker{display:flex;align-items:stretch;height:84px;border-radius:999px;background:var(--white);border:1px solid var(--line);box-shadow:0 14px 36px rgba(11,14,20,.08);overflow:hidden}
+.t-logo{flex:none;display:flex;align-items:center;padding:0 30px 0 34px;position:relative}
+.t-logo img{height:44px;width:auto;display:block}
+.t-logo::after{content:"";position:absolute;right:0;top:20px;bottom:20px;width:2px;background:var(--ink)}
+.t-view{flex:1;min-width:0;overflow:hidden;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 36px,#000 calc(100% - 64px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 36px,#000 calc(100% - 64px),transparent 100%)}
+.t-track{display:flex;width:max-content;animation:tick 58s linear infinite;will-change:transform}
+.t-group{display:flex;align-items:center;flex:none}
+.t-item,.t-stat{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:25px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;color:var(--ink)}
+.t-stat{background:var(--orange);padding:5px 18px;border-radius:999px}
+.t-sep{height:29px;width:auto;margin:0 24px;flex:none;display:block}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+
+/* ---------- SEPARADOR SOLDADURA + BANNER PIN ---------- */
+.weld-wrap{padding-top:84px}
+.weld{position:relative;height:6px;width:100vw;left:50%;margin-left:-50vw}
+.weld .base{position:absolute;left:0;right:0;top:2px;height:2px;background:rgba(255,102,0,.22)}
+.weld .fill{position:absolute;left:0;top:1px;height:4px;width:0;background:var(--orange);border-radius:4px}
+.weld .head{position:absolute;top:50%;left:0;width:38px;height:38px;margin:-19px 0 0 -19px;display:grid;place-items:center;opacity:0}
+.weld .head::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:radial-gradient(circle,rgba(255,170,90,.85) 0%,rgba(255,102,0,.5) 38%,rgba(255,102,0,0) 70%)}
+.weld .head img{position:relative;height:34px;width:auto;display:block;filter:drop-shadow(0 0 6px rgba(255,200,140,.9)) drop-shadow(0 0 14px rgba(255,102,0,.85))}
+.weld.go .fill{animation:wfl 3.6s cubic-bezier(.45,.05,.4,1) infinite}
+.weld.go .head{animation:wsp 3.6s cubic-bezier(.45,.05,.4,1) infinite}
+@keyframes wfl{0%{width:0;opacity:1}82%{width:100%;opacity:1}100%{width:100%;opacity:0}}
+@keyframes wsp{0%{left:0;opacity:0}6%{opacity:1}82%{left:100%;opacity:1}100%{left:100%;opacity:0}}
+.pinbanner{position:relative;height:440px;border-radius:28px;overflow:hidden;background:#E9E4DA;margin-top:46px}
+.pinbanner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.pinbanner .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.9) 34%,rgba(255,255,255,.45) 58%,rgba(255,255,255,0) 80%)}
+.pinbanner .copy{position:absolute;inset:0;display:flex;align-items:center;padding:0 clamp(28px,5vw,72px)}
+.pinbanner h2{font-family:'Teko',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(34px,4.4vw,66px);line-height:.95;margin:0;max-width:560px;-webkit-text-stroke:.6px var(--ink);paint-order:stroke fill}
+.pinbanner h2 em{font-style:normal;color:var(--orange);-webkit-text-stroke:.6px var(--orange)}
+@media (max-width:720px){.pinbanner{height:380px}.pinbanner h2{font-size:36px}.pinbanner .veil{background:linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.8) 55%,rgba(255,255,255,.35) 100%)}.weld .head{width:30px;height:30px;margin:-15px 0 0 -15px}.weld .head img{height:26px}}
+@media (prefers-reduced-motion:reduce){.weld .fill{width:100%}.weld .head{display:none}.weld.go .fill{animation:none}}
+
+/* ---------- TARJETAS QUE VOLTEAN ---------- */
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.fc{position:relative;border-radius:26px}
+.fc .in{display:grid;border-radius:26px;position:relative}
+.fc .face{grid-area:1/1;border-radius:26px;overflow:hidden;position:relative}
+.fc .front{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.fc .ph{aspect-ratio:4/5;background:#fff;overflow:hidden}
+.fc .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.fc .info{padding:6px 24px 26px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.fc .info h3{font-size:23px;line-height:1.05;margin:0}
+.fc .hint{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;gap:6px;font-size:14px;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:999px;padding:5px 11px 5px 8px;color:var(--ink)}
+.fc .sw{width:16px;height:16px;fill:none;stroke:var(--orange);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fc .chip{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;border:1.5px solid var(--orange);color:var(--ink);border-radius:999px;padding:4px 13px;background:#fff}
+.fc .chip.ex{background:var(--orange);color:var(--ink);padding:6px 15px 6px 11px;font-family:'Oswald','Arial Narrow',sans-serif;font-size:16px;letter-spacing:.05em;text-transform:uppercase;position:relative;overflow:hidden}
+.fc .chip.ex .bolt{width:17px;height:17px;fill:var(--ink)}
+.fc .chip.ex::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);transform:translateX(-120%)}
+.fc.ex.go .chip.ex::after{animation:csweep 1.3s .5s ease-out 1 forwards,csweep 1.3s 4.5s ease-out infinite}
+.fc.ex.go .front{border-color:var(--orange)}
+.fc.ex.go::before{content:"";position:absolute;inset:-1px;border-radius:26px;border:2px solid var(--orange);animation:chalo 2.4s .8s ease-out infinite;pointer-events:none;z-index:2}
+@keyframes csweep{to{transform:translateX(120%)}}
+@keyframes chalo{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.05)}}
+.fc .back{background:var(--ink);color:#fff;padding:30px 26px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;border:1px solid var(--ink)}
+.fc .back .lab{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:15px;color:var(--orange)}
+.fc .back h3{font-family:'Teko',sans-serif;font-weight:700;text-transform:uppercase;font-size:44px;line-height:.95;margin:10px 0 0;color:#fff}
+.fc .back p{font-size:18px;line-height:1.4;color:#E6E1D7;margin-top:14px}
+.fc .back .chip.bc{background:var(--orange);border-color:var(--orange);color:var(--ink);align-self:flex-start;font-size:16px;padding:6px 14px;position:relative;z-index:1}
+.fc .back .wm{position:absolute;right:-26px;bottom:-26px;width:150px;opacity:.09;pointer-events:none}
+.fc .tap{position:absolute;inset:0;z-index:3;border:0;background:none;cursor:pointer;border-radius:26px;padding:0}
+.fc .tap:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.fc:hover .front{border-color:var(--orange)}
+/* A · volteo 3D */
+.v-flip .fc{perspective:1400px}
+.v-flip .in{transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,.8,.25,1)}
+.v-flip .face{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.v-flip .back{transform:rotateY(180deg)}
+.v-flip .fc.on .in{transform:rotateY(180deg)}
+/* B · revelado con cortina */
+.v-wipe .back{clip-path:inset(100% 0 0 0);transition:clip-path .65s cubic-bezier(.7,0,.2,1);z-index:1}
+.v-wipe .back .bk,.v-wipe .back .chip,.v-wipe .back .wm{opacity:0;transform:translateY(14px);transition:opacity .4s .3s,transform .4s .3s}
+.v-wipe .fc.on .back{clip-path:inset(0 0 0 0)}
+.v-wipe .fc.on .back .bk,.v-wipe .fc.on .back .chip,.v-wipe .fc.on .back .wm{opacity:1;transform:none}
+.v-wipe .back .wm{opacity:0}.v-wipe .fc.on .back .wm{opacity:.09}
+@media (max-width:720px){.fgrid{grid-template-columns:1fr}.fc .back h3{font-size:40px}}
+@media (prefers-reduced-motion:reduce){.v-flip .in,.v-wipe .back,.v-wipe .back *{transition:none!important}.fc *,.fc::before{animation:none!important}}
+
+/* ---------- PORTADA EN VIDEO ---------- */
+.fc .front{aspect-ratio:9/16;background:#0B0E14;border-color:transparent;display:block}
+.fc .front video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.fc .front::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(11,14,20,.92) 0%,rgba(11,14,20,.55) 30%,rgba(11,14,20,0) 58%)}
+.fc .info{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 24px 26px;gap:12px}
+.fc .info h3{font-family:'Teko',sans-serif;font-weight:700;text-transform:uppercase;font-size:30px;line-height:.92;color:#fff;letter-spacing:.01em}
+.fc .hint{z-index:2}
+.fc .back{aspect-ratio:9/16;justify-content:space-between}
+.fc .back p{font-size:19px}
+.fc .front video{object-position:50% 50%}
+
+/* dorso: más contenido, texto chico */
+.fc .back{padding:26px 22px 20px;justify-content:flex-start;gap:0}
+.fc .back h3{font-size:28px;margin:0}
+.fc .back p.intro{font-size:14.5px;line-height:1.35;margin-top:8px;color:#fff}
+.fc .back ul{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:9px}
+.fc .back li{font-size:13.5px;line-height:1.35;color:#D9D4CA;padding-left:16px;position:relative}
+.fc .back li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.fc .back li b{color:var(--orange);font-weight:700}
+.fc .back .ft{margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.16);display:flex;justify-content:center;position:relative;z-index:1}
+.fc .back .chip.bc{align-self:center;font-size:16px}
+
+
+/* ---------- CARRUSEL ACCESORIOS ---------- */
+#accesorios h2{margin-bottom:0}
+.acc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:36px}
+.acc-nav{display:flex;gap:10px;flex:none;padding-bottom:8px}
+.anav{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--ink);background:var(--white);display:grid;place-items:center;cursor:pointer;padding:0;transition:background .2s,border-color .2s}
+.anav svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+.anav:hover{background:var(--orange);border-color:var(--orange)}
+.anav:focus-visible,.acc-track:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.acc-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 18px;margin:0 -2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.acc-track::-webkit-scrollbar{display:none}
+.acard{flex:0 0 clamp(230px,23%,290px);scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:24px;padding:18px 18px 24px;display:flex;flex-direction:column;gap:10px;transition:border-color .25s,transform .25s}
+.acard:hover{border-color:var(--orange-fn);transform:translateY(-4px)}
+.aimg{aspect-ratio:1/1;border-radius:16px;background:radial-gradient(70% 70% at 50% 40%,#FFE9D6,#FFF8F2);display:grid;place-items:center}
+.aimg.ap{overflow:hidden;background:#fff;display:block}
+.aimg.ap img{width:100%;height:100%;object-fit:cover;display:block}
+.aimg svg{width:56%;height:56%;fill:none;stroke:var(--ink);stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.aimg svg .o{stroke:var(--orange)}
+.acard h3{font-size:25px;line-height:1.1;margin-top:6px;padding:0 6px}
+.acard p{font-size:17px;color:var(--graphite);padding:0 6px}
+.acard .btn{margin:6px 6px 0;min-height:48px;font-size:18px}
+@media (max-width:720px){.acard{flex-basis:72%}.anav{width:46px;height:46px}.acc-head{align-items:flex-end}}
+@media (prefers-reduced-motion:reduce){.acc-track{scroll-behavior:auto}}
+
+/* ---------- AUTORIDAD ---------- */
+.auth{position:relative;z-index:3;margin-top:36px}
+.auth .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.glass{display:flex;gap:20px;align-items:center;padding:26px 28px;border-radius:22px;background:rgba(255,255,255,.72);border:1px solid var(--line);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 14px 40px rgba(11,14,20,.08)}
+.glass b{display:block;font-size:40px;line-height:1;font-weight:700}
+.glass span{display:block;font-size:18px;color:var(--graphite);margin-top:6px}
+
+/* ---------- SECCIONES ---------- */
+section{padding:120px 0 0}
+h2{font-size:clamp(32px,4vw,56px);line-height:1;max-width:860px;margin:16px 0 52px}
+.cards{display:flex;flex-wrap:wrap;gap:24px;align-items:stretch}
+.card{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:36px 40px;transition:border-color .25s}
+.card:hover{border-color:var(--orange-fn)}
+.card .top-row{display:flex;justify-content:space-between;align-items:center}
+.card .num{font-size:16px;letter-spacing:.14em;color:var(--mist)}
+.card h3{font-size:32px;line-height:1.05;margin-top:14px}
+.card p{color:var(--graphite);margin-top:12px}
+.card ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:14px}
+.card li{display:flex;gap:12px;color:var(--ink)}
+.card li::before{content:"";flex:none;width:11px;height:11px;border:1.6px solid var(--orange-fn);border-radius:50%;margin-top:8px}
+.big{flex:1 1 460px;min-width:0}
+.stack{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.stack .card{flex:1}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+@media (min-width:1100px){.products{grid-template-columns:repeat(5,1fr);gap:18px}.prod{padding:14px 14px 20px}.prod h3{font-size:23px}.prod .eqt{font-size:15px}.tag{font-size:13.5px}}
+.prod{padding:18px 18px 24px;border-radius:24px;display:flex;flex-direction:column;gap:14px}
+.ph{aspect-ratio:4/3;border-radius:16px;background:radial-gradient(70% 70% at 50% 40%,#E9E4DA,var(--paper));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.ph img{width:34%;height:auto;opacity:.1}
+.ph span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+.prod .meta{padding:0 8px;display:flex;flex-direction:column;gap:8px}
+.prod h3{font-size:26px;line-height:1.1}
+.prod .spec-line{font-size:17px;color:var(--graphite)}
+.prod .price{font-size:30px;font-weight:700;margin-top:4px}
+.tag{display:inline-flex;align-items:flex-start;gap:10px;font-size:15px;border:1px solid var(--orange-fn);border-radius:14px;padding:8px 12px;align-self:flex-start;background:var(--white)}
+.tag::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--orange-fn);margin-top:7px}
+.eqimg{display:block;width:100%;height:auto;border-radius:16px;background:#F1EDE4}
+.prod .eqt{font-size:17px;color:var(--graphite)}
+.prod .btn{margin-top:6px;min-height:48px;font-size:18px}
+
+/* ---------- CONTACTO ---------- */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.ccard{display:flex;align-items:center;justify-content:center;padding:34px;border-radius:24px;background:var(--white);border:1px solid var(--line);text-decoration:none;transition:border-color .25s,transform .25s}
+.ccard:hover{border-color:var(--orange-fn)}
+.ccard svg.brand{width:64px;height:64px;transition:transform .25s}
+.ccard:hover{transform:translateY(-4px)}
+.ccard:hover svg.brand{transform:scale(1.08)}
+.ccard.wa{background:#25D366;border-color:#25D366}
+.ccard.ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:transparent}
+.ccard.ml{background:#EA4335;border-color:#EA4335}
+.ccard.wa svg.brand,.ccard.ig svg.brand,.ccard.ml svg.brand{fill:#fff}
+.ccard.wa:hover{border-color:#1da851;box-shadow:0 14px 30px -10px rgba(37,211,102,.6)}
+.ccard.ig:hover{border-color:transparent;box-shadow:0 14px 30px -10px rgba(214,36,159,.6)}
+.ccard.ml:hover{border-color:#c5221f;box-shadow:0 14px 30px -10px rgba(234,67,53,.6)}
+.ccard:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.ccard b{font-size:26px;line-height:1.1;text-transform:uppercase}
+.ccard .val{font-size:20px;color:var(--ink);overflow-wrap:anywhere}
+.ccard small{font-size:16px;color:var(--mist)}
+.store{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 40px;padding:22px 30px;border-radius:20px;border:1px solid var(--line);background:var(--white);color:var(--graphite);font-size:18px}
+.store b{color:var(--ink)}
+footer{margin-top:120px;border-top:1px solid var(--line);padding:44px 0 56px}
+footer .row{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+footer img{height:40px;width:auto}
+footer p{font-size:15px;color:var(--mist);max-width:760px;margin-top:22px}
+
+/* ---------- FLOTANTE ---------- */
+.fab{position:fixed;right:18px;bottom:18px;z-index:20;width:62px;height:62px;border-radius:50%;background:#25D366;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(11,14,20,.3)}
+.fab svg{width:34px;height:34px}
+.fab .b-wa{fill:#FFFFFF}
+
+@media (max-width:720px){
+  .ticker{height:68px}
+  .t-logo{padding:0 16px 0 20px}
+  .t-logo img{height:30px}
+  .t-logo::after{top:16px;bottom:16px}
+  .t-item,.t-stat{font-size:20px}
+  .t-sep{height:23px;margin:0 16px}
+  .t-track{animation-duration:46s}
+  body{font-size:18px}
+  .nav a.link{display:none}
+  .veil{background:linear-gradient(0deg,var(--paper) 0%,rgba(255,255,255,0) 22%),rgba(255,255,255,.86)}
+  .hero{min-height:700px}
+  .hero-body{padding-bottom:60px}
+  .card{padding:28px 24px}
+  section{padding-top:84px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .caret{animation:none}
+  .t-track{animation:none}
+  .t-view{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+}
+
+/* ---------- MÓVIL: compacto y con carruseles ---------- */
+.mdots{display:none}
+@media (max-width:720px){
+  body{font-size:17px}
+  .hero{min-height:540px}
+  .hero-body{padding-top:36px;padding-bottom:44px}
+  section{padding-top:60px}
+  h2{font-size:clamp(27px,7.6vw,32px);margin:10px 0 20px}
+  .hero h1{font-size:clamp(34px,10vw,42px)}
+  footer{margin-top:60px;padding:32px 0 40px}
+  .tick-wrap{margin-top:20px}
+  .auth{margin-top:20px}
+  /* carruseles horizontales */
+  .fgrid,.products,.auth .grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 24px;margin:0 -24px;padding:6px 24px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .fgrid::-webkit-scrollbar,.products::-webkit-scrollbar,.auth .grid::-webkit-scrollbar{display:none}
+  .fgrid>.fc{flex:0 0 70%;scroll-snap-align:start}
+  .products>.prod{flex:0 0 62%;scroll-snap-align:start}
+  .auth .grid>.glass{flex:0 0 82%;scroll-snap-align:start}
+  .glass b{font-size:28px}
+  .fc .front{aspect-ratio:9/16;height:100%}
+  .fc .back{aspect-ratio:auto;height:100%;min-height:0}
+  .fgrid>.fc{display:flex}
+  .fgrid>.fc .in{flex:1;min-width:0}
+  .fc .info h3{font-size:24px}
+  .fc .chip.ex{font-size:14px;white-space:nowrap;padding:5px 12px 5px 9px}
+  .fc .info{padding:0 18px 22px}
+  .fc .back{padding:18px 16px 12px}
+  .fc .back h3{font-size:24px}
+  .fc .back p.intro{font-size:14px;line-height:1.35;margin-top:8px}
+  .fc .back li{font-size:12px;line-height:1.3;padding-left:14px}
+  .fc .back ul{gap:6px;margin-top:9px}
+  .fc .back .ft{padding-top:10px}
+  .fc .back .chip.bc{font-size:13px;padding:5px 11px;white-space:nowrap}
+  .prod .eqimg{border-radius:14px}
+  .prod h3{font-size:21px}
+  .prod .eqt{font-size:15px}
+  .acard h3{font-size:21px}
+  .acard p{font-size:15px}
+  /* puntos indicadores */
+  .mdots{display:flex;justify-content:center;gap:8px;margin-top:4px}
+  .mdots i{width:8px;height:8px;border-radius:50%;background:rgba(11,14,20,.18);transition:all .25s}
+  .mdots i.on{width:24px;border-radius:8px;background:var(--orange)}
+  /* separador y banner del pin */
+  .weld-wrap{padding-top:44px}
+  .pinbanner{height:300px;margin-top:30px;border-radius:22px}
+  .pinbanner h2{font-size:30px;max-width:78%;margin:0}
+  .pinbanner .copy{padding:0 22px}
+  /* accesorios */
+  .acc-head{margin-bottom:22px}
+  .acard{flex-basis:62%;padding:14px 14px 20px}
+  .acard h3{font-size:22px}
+  /* contacto */
+  .contact{grid-template-columns:repeat(3,1fr);gap:12px}
+  .ccard{padding:22px 10px}
+  .ccard svg.brand{width:44px;height:44px}
+  .store{padding:18px 20px;font-size:16px;gap:8px}
+}
+html,body{overflow-x:clip}
+
+.fc .back .qf{display:flex;flex-direction:column;gap:8px;margin-top:14px;position:relative;z-index:4}
+.fc .back .qf input{width:100%;box-sizing:border-box;font:inherit;font-size:16px;line-height:1.2;color:#fff;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.28);border-radius:12px;padding:10px 12px;outline:none;transition:border-color .2s,background .2s}
+.fc .back .qf input::placeholder{color:rgba(255,255,255,.62)}
+.fc .back .qf input:focus{border-color:var(--orange);background:rgba(255,255,255,.14)}
+.fc .back .qf input.bad{border-color:#ff6b57}
+.fc .back .qs{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border:0;border-radius:12px;background:#25D366;color:#fff;font:inherit;font-size:17px;font-weight:700;cursor:pointer;transition:filter .2s,transform .2s}
+.fc .back .qs:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.fc .back .qs svg{width:20px;height:20px;fill:#fff}
+.fc .tap .bk-arrow{display:none;width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fc.on .tap{inset:auto;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center}
+.fc.on .tap .bk-arrow{display:block}
+.fc.on .tap:hover{background:var(--orange)}
+@media (max-width:720px){.fc .back .qf{gap:6px;margin-top:10px}.fc .back .qf input{padding:8px 10px;border-radius:10px}.fc .back .qs{min-height:40px;font-size:16px}.fc.on .tap{top:8px;right:8px;width:34px;height:34px}}
+.fc .back .bk h3{padding-right:38px}
+
+.fc .back .qlab{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:17px;color:var(--orange);margin:18px 0 0}
+.fc .back .qf{margin-top:10px}
+.fc .back .bk{flex:none}
+@media (max-width:720px){.fc .back .qlab{font-size:15px;margin-top:12px}}
+
+/* fix iOS: la cara que no se ve queda oculta de verdad (sin reflejo) */
+.v-flip .front,.v-flip .back{transition:visibility 0s .4s}
+.v-flip .back{visibility:hidden}
+.v-flip .fc.on .back{visibility:visible}
+.v-flip .fc.on .front{visibility:hidden}
+@media (prefers-reduced-motion:reduce){.v-flip .front,.v-flip .back{transition:none}}
+@media (max-width:720px){
+  h2{font-size:clamp(23px,6.6vw,27px)}
+  .hero h1{font-size:clamp(30px,8.6vw,36px)}
+  .pinbanner h2{font-size:25px;max-width:80%}
+  .fc .info h3{font-size:21px}
+  .fc .back{padding:16px 14px 12px}
+  .fc .back h3{font-size:19px;padding-right:34px}
+  .fc .back p.intro{font-size:12.5px;line-height:1.35}
+  .fc .back .qlab{font-size:13px;margin-top:10px}
+  .fc .back .qf input{font-size:16px;padding:7px 10px}
+  .fc .back .qs{font-size:15px;min-height:38px}
+  .fc.on .tap{width:30px;height:30px;top:10px;right:10px}
+  .fc .back .chip.bc{font-size:12px}
+  .fgrid>.fc:last-child .back h3{font-size:17px;letter-spacing:0}
+  .glass b{font-size:24px}
+  .prod h3{font-size:19px}
+  .acard h3{font-size:19px}
+}
+
+.locB{margin-top:6px;position:relative;z-index:4}
+.rowB{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);padding:14px 0}
+.rowB i{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,102,0,.55))}
+.rowB i:last-child{background:linear-gradient(270deg,transparent,rgba(255,102,0,.55))}
+.rowB .ic{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--orange);background:#fff;transition:background .25s}
+.rowB .mp{width:20px;height:20px;fill:none;stroke:var(--orange);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.rowB:hover .ic{background:var(--orange)}.rowB:hover .mp{stroke:#fff}
+.rowB .tx{display:flex;flex-direction:column;line-height:1.15}
+.rowB .tx b{font-size:16px;font-weight:700}
+.rowB .tx em{font-style:normal;font-size:14px;color:var(--orange);font-weight:600}
+.rowB .ar{width:16px;height:16px;fill:none;stroke:var(--orange);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;margin-left:-6px}
+.rowB:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:12px}
+.sbtn .mp{width:22px;height:22px;fill:none;stroke:#EA4335;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:720px){.rowB{gap:10px}.rowB .tx b{font-size:14px}.rowB .tx em{font-size:12.5px}.rowB .ic{width:34px;height:34px}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".25" stop-color="#FA7E1E"/><stop offset=".5" stop-color="#D62976"/><stop offset=".75" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient>
+    <symbol id="b-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="b-ig" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></symbol>
+    <symbol id="b-mail" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></symbol>
+    <symbol id="i-dev" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2.5v3.5M15 2.5v3.5M9 18v3.5M15 18v3.5M2.5 9h3.5M2.5 15h3.5M18 9h3.5M18 15h3.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-board" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><circle cx="8" cy="8" r="1.4"/><circle cx="16" cy="16" r="1.4"/><path d="M9.4 8H13v5.5M16 14.6V13"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-phone-screen" viewBox="0 0 24 24"><rect x="6.5" y="2" width="11" height="20" rx="2.4"/><rect x="8.6" y="4.6" width="6.8" height="11.8" rx="1"/><path d="M10.5 19.3h3"/></symbol>
+    <symbol id="i-charge" viewBox="0 0 24 24"><rect x="6.5" y="2" width="11" height="20" rx="2.4"/><path d="M12.8 6.5L9.6 12h3l-1.4 5 3.4-5.8h-3z"/></symbol>
+    <symbol id="i-build" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20M9 16v4M15 16v4"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="inicio">
+  <video id="heroVideo" muted loop playsinline preload="none" poster="assets/img/hero-poster.webp" aria-hidden="true" tabindex="-1"></video>
+  <div class="veil"></div>
+  <div class="wrap top">
+    <a href="#inicio" aria-label="DINGO FIX, inicio"><img src="assets/img/logo-horizontal-positivo.png" alt="DINGO FIX"></a>
+    <div class="nav">
+      <a class="link" href="#servicios">Servicios</a>
+      <a class="link" href="#tecnologia">Tecnología</a>
+      <a class="link" href="#contacto">Contacto</a>
+      <div class="social">
+        <a class="sbtn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20mi%20equipo." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg></a>
+        <a class="sbtn" href="https://www.instagram.com/dingofixoficial/" target="_blank" rel="noopener" aria-label="Instagram de DINGO FIX"><svg class="brand b-ig" aria-hidden="true"><use href="#b-ig"/></svg></a>
+        <a class="sbtn" href="mailto:dingofixoficial@gmail.com" aria-label="Enviar un correo"><svg class="brand b-mail" aria-hidden="true"><use href="#b-mail"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap hero-body">
+    <div class="copy">
+      <h1>Servicio técnico</h1>
+      <p class="spec">
+        <span class="spec-lead" aria-hidden="true">Especialistas en reparación de equipos móviles</span>
+        <span class="spec-word" aria-hidden="true"><span id="typed">multimarca</span><i class="caret"></i></span>
+        <span class="sr">Especialistas en reparación de equipos móviles multimarca: Xiaomi, Samsung, Tecno, iPhone, Infinix, Motorola, ZTE, BLU, Huawei y muchas más.</span>
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- ============ AUTORIDAD ============ -->
+<div class="wrap locB"><a class="rowB" href="https://maps.app.goo.gl/Szi8kCyU7XhPTJgE7" target="_blank" rel="noopener" aria-label="Ver ubicación de DINGO FIX en Google Maps"><i></i><span class="ic"><svg class="mp" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span class="tx"><b>C.C. Coche, local 25</b><em>Cómo llegar</em></span><svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg><i></i></a></div>
+<div class="wrap auth">
+  <div class="grid">
+    <div class="glass"><svg class="ico" style="width:32px;height:32px"><use href="#i-dev"/></svg><div><b>4.860</b><span>Equipos reparados</span></div></div>
+    <div class="glass"><svg class="ico" style="width:32px;height:32px"><use href="#i-chip"/></svg><div><b>Alta calidad</b><span>Componentes certificados</span></div></div>
+    <div class="glass"><svg class="ico" style="width:32px;height:32px"><use href="#i-shield"/></svg><div><b>Garantía escrita</b><span>Respaldada por marca</span></div></div>
+  </div>
+</div>
+
+<!-- ============ CINTA DE MARCAS ============ -->
+<div class="wrap tick-wrap">
+  <div class="ticker">
+    <div class="t-logo"><img src="assets/img/logo-horizontal-positivo.png" alt="DINGO FIX"></div>
+    <div class="t-view" role="group" aria-label="Marcas que reparamos">
+      <div class="t-track"><div class="t-group"><span class="t-item">Xiaomi</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Samsung</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Tecno</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">iPhone</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Infinix</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Motorola</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">ZTE</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">BLU</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Huawei</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Honor</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Oppo</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Realme</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Vivo</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Redmi</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">POCO</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">OnePlus</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Google Pixel</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">LG</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Nokia</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Alcatel</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Sony</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Itel</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Lenovo</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Asus</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"></div><div class="t-group" aria-hidden="true"><span class="t-item">Xiaomi</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Samsung</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Tecno</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">iPhone</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Infinix</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Motorola</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">ZTE</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">BLU</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Huawei</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Honor</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Oppo</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Realme</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Vivo</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Redmi</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">POCO</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">OnePlus</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Google Pixel</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">LG</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Nokia</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Alcatel</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Sony</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Itel</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"><span class="t-item">Lenovo</span><img class="t-sep" src="assets/img/isologo-naranja.png" alt="" width="26" height="29"><span class="t-item">Asus</span><img class="t-sep" src="assets/img/isologo-negro.png" alt="" width="26" height="29"></div></div>
+  </div>
+  <p class="sr">Reparamos Xiaomi, Samsung, Tecno, iPhone, Infinix, Motorola, ZTE, BLU, Huawei, Honor, Oppo, Realme, Vivo, Redmi, POCO, OnePlus, Google Pixel, LG, Nokia, Alcatel, Sony, Itel, Lenovo, Asus.</p>
+</div>
+
+<main>
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="label">Reparaciones avanzadas</div>
+    <h2>Restauramos tu celular.</h2>
+    <div class="fgrid v-flip"><article class="fc ex fio" data-s="cambio de pin de carga">
+<div class="in">
+<div class="face front"><video muted playsinline loop preload="none" poster="assets/img/v-pin.webp" data-src="assets/video/pin.mp4" aria-hidden="true"></video><div class="info"><span class="chip ex"><svg class="bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 1 4 13.5h6L9 23l10.5-13.5h-6.2z"/></svg>Express · 30 min</span><h3>Cambio de pin de carga</h3></div></div>
+<div class="face back"><div class="bk"><h3>Cambio de pin de carga</h3><p class="intro">Cambiamos la pieza donde enchufás el cargador.</p><p class="qlab">Consulta tu modelo aquí</p></div><form class="qf" novalidate><input class="qm" name="modelo" type="text" maxlength="40" placeholder="Tu modelo" aria-label="Modelo de tu celular" autocomplete="off" required><input class="qc" name="consulta" type="text" maxlength="120" placeholder="Escribe tu consulta" aria-label="Tu consulta" autocomplete="off"><button class="qs" type="submit"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Enviar</button></form><div class="ft"><span class="chip bc">Express · Listo en 30 min</span></div><img class="wm" src="assets/img/isologo-blanco.png" alt=""></div>
+</div>
+<button class="tap" type="button" aria-pressed="false" aria-label="Voltear tarjeta: Cambio de pin de carga" data-l="Cambio de pin de carga"><svg class="bk-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+</article><article class="fc" data-s="cambio de pantalla">
+<div class="in">
+<div class="face front"><video muted playsinline loop preload="none" poster="assets/img/v-pantalla.webp" data-src="assets/video/pantalla.mp4" aria-hidden="true"></video><div class="info"><span class="chip">30 min</span><h3>Cambio de pantalla</h3></div></div>
+<div class="face back"><div class="bk"><h3>Cambio de pantalla</h3><p class="intro">Reemplazamos el vidrio y el panel táctil dañados por uno nuevo.</p><p class="qlab">Consulta tu modelo aquí</p></div><form class="qf" novalidate><input class="qm" name="modelo" type="text" maxlength="40" placeholder="Tu modelo" aria-label="Modelo de tu celular" autocomplete="off" required><input class="qc" name="consulta" type="text" maxlength="120" placeholder="Escribe tu consulta" aria-label="Tu consulta" autocomplete="off"><button class="qs" type="submit"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Enviar</button></form><div class="ft"><span class="chip bc">Listo en 30 min</span></div><img class="wm" src="assets/img/isologo-blanco.png" alt=""></div>
+</div>
+<button class="tap" type="button" aria-pressed="false" aria-label="Voltear tarjeta: Cambio de pantalla" data-l="Cambio de pantalla"><svg class="bk-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+</article><article class="fc" data-s="cambio de batería">
+<div class="in">
+<div class="face front"><video muted playsinline loop preload="none" poster="assets/img/v-bateria.webp" data-src="assets/video/bateria.mp4" aria-hidden="true"></video><div class="info"><span class="chip">30 min</span><h3>Cambio de batería</h3></div></div>
+<div class="face back"><div class="bk"><h3>Cambio de batería</h3><p class="intro">Cambiamos la batería vieja o dañada por una nueva.</p><p class="qlab">Consulta tu modelo aquí</p></div><form class="qf" novalidate><input class="qm" name="modelo" type="text" maxlength="40" placeholder="Tu modelo" aria-label="Modelo de tu celular" autocomplete="off" required><input class="qc" name="consulta" type="text" maxlength="120" placeholder="Escribe tu consulta" aria-label="Tu consulta" autocomplete="off"><button class="qs" type="submit"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Enviar</button></form><div class="ft"><span class="chip bc">Listo en 30 min</span></div><img class="wm" src="assets/img/isologo-blanco.png" alt=""></div>
+</div>
+<button class="tap" type="button" aria-pressed="false" aria-label="Voltear tarjeta: Cambio de batería" data-l="Cambio de batería"><svg class="bk-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+</article><article class="fc" data-s="microsoldadura (reparación de placa)">
+<div class="in">
+<div class="face front"><video muted playsinline loop preload="none" poster="assets/img/v-micro.webp" data-src="assets/video/micro.mp4" aria-hidden="true"></video><div class="info"><h3>Microsoldadura</h3></div></div>
+<div class="face back"><div class="bk"><h3>Microsoldadura</h3><p class="intro">Reparamos la placa del celular pieza por pieza, bajo microscopio.</p><p class="qlab">Consulta tu modelo aquí</p></div><form class="qf" novalidate><input class="qm" name="modelo" type="text" maxlength="40" placeholder="Tu modelo" aria-label="Modelo de tu celular" autocomplete="off" required><input class="qc" name="consulta" type="text" maxlength="120" placeholder="Escribe tu consulta" aria-label="Tu consulta" autocomplete="off"><button class="qs" type="submit"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Enviar</button></form><div class="ft"><span class="chip bc">Bajo microscopio</span></div><img class="wm" src="assets/img/isologo-blanco.png" alt=""></div>
+</div>
+<button class="tap" type="button" aria-pressed="false" aria-label="Voltear tarjeta: Microsoldadura" data-l="Microsoldadura"><svg class="bk-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+</article></div>
+  </div>
+</section>
+
+
+<!-- ============ SEPARADOR + BANNER PIN DE CARGA ============ -->
+<div class="wrap weld-wrap">
+  <div class="weld io" aria-hidden="true"><div class="base"></div><div class="fill"></div><div class="head"><img src="assets/img/isologo-naranja.png" alt=""></div></div>
+  <div class="pinbanner">
+    <video id="pinVideo" muted playsinline loop preload="metadata" poster="assets/img/pin-poster.webp" data-src="assets/video/pin.mp4" data-mov="assets/video/pin-movil.mp4" aria-hidden="true"></video>
+    <div class="veil"></div>
+    <div class="copy"><h2>Cambio de pin de carga <em>express</em></h2></div>
+  </div>
+</div>
+
+
+<!-- ============ ACCESORIOS (CARRUSEL) ============ -->
+<section id="accesorios">
+  <div class="wrap">
+    <div class="acc-head">
+      <div><div class="label">Accesorios</div><h2>Todo para tu celular.</h2></div>
+      <div class="acc-nav"><button type="button" class="anav" id="accPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="anav" id="accNext" aria-label="Siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+    </div>
+    <div class="acc-track" id="accTrack" tabindex="0" aria-label="Carrusel de accesorios">
+      <article class="acard"><div class="aimg ap"><img src="assets/img/ac-fundas.webp" alt="Fundas" width="640" height="640" loading="lazy"></div><h3>Fundas</h3><p>Consultá modelos y disponibilidad.</p><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20accesorios%3A%20Fundas." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></article>
+      <article class="acard"><div class="aimg ap"><img src="assets/img/ac-vidrios.webp" alt="Vidrios templados" width="640" height="640" loading="lazy"></div><h3>Vidrios templados</h3><p>Consultá modelos y disponibilidad.</p><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20accesorios%3A%20Vidrios%20templados." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></article>
+      <article class="acard"><div class="aimg ap"><img src="assets/img/ac-cargadores.webp" alt="Cargadores" width="640" height="640" loading="lazy"></div><h3>Cargadores</h3><p>Consultá modelos y disponibilidad.</p><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20accesorios%3A%20Cargadores." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></article>
+      <article class="acard"><div class="aimg ap"><img src="assets/img/ac-audifonos.webp" alt="Audífonos" width="640" height="640" loading="lazy"></div><h3>Audífonos</h3><p>Consultá modelos y disponibilidad.</p><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20accesorios%3A%20Aud%C3%ADfonos." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></article>
+      <article class="acard"><div class="aimg ap"><img src="assets/img/ac-powerbanks.webp" alt="Power banks" width="640" height="640" loading="lazy"></div><h3>Power banks</h3><p>Consultá modelos y disponibilidad.</p><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20accesorios%3A%20Power%20banks." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></article>
+      <article class="acard"><div class="aimg ap"><img src="assets/img/ac-soportes.webp" alt="Soportes" width="640" height="640" loading="lazy"></div><h3>Soportes</h3><p>Consultá modelos y disponibilidad.</p><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20accesorios%3A%20Soportes." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECNOLOGIA ============ -->
+<section id="tecnologia">
+  <div class="wrap">
+    <div class="label">Tecnología y hardware en venta</div>
+    <h2>Equipos seleccionados.</h2>
+    <div class="products">
+      <article class="card prod"><img class="eqimg" src="assets/img/eq-iphone.webp" alt="Equipos iPhone y repuestos" width="768" height="1376" loading="lazy"><div class="meta"><h3>iPhone</h3><p class="eqt">Consultá por los modelos disponibles.</p><div class="tag">Disponible para retiro y pago en tienda física</div><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20equipos%20iPhone." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></div></article>
+      <article class="card prod"><img class="eqimg" src="assets/img/eq-samsung.webp" alt="Equipos Samsung Galaxy y repuestos" width="768" height="1376" loading="lazy"><div class="meta"><h3>Samsung</h3><p class="eqt">Consultá por los modelos disponibles.</p><div class="tag">Disponible para retiro y pago en tienda física</div><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20equipos%20Samsung." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></div></article>
+      <article class="card prod"><img class="eqimg" src="assets/img/eq-motorola.webp" alt="Equipos Motorola y repuestos" width="768" height="1376" loading="lazy"><div class="meta"><h3>Motorola</h3><p class="eqt">Consultá por los modelos disponibles.</p><div class="tag">Disponible para retiro y pago en tienda física</div><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20equipos%20Motorola." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></div></article>
+      <article class="card prod"><img class="eqimg" src="assets/img/eq-xiaomi.webp" alt="Equipos Xiaomi y repuestos" width="768" height="1376" loading="lazy"><div class="meta"><h3>Xiaomi</h3><p class="eqt">Consultá por los modelos disponibles.</p><div class="tag">Disponible para retiro y pago en tienda física</div><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20equipos%20Xiaomi." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></div></article>
+      <article class="card prod"><img class="eqimg" src="assets/img/eq-infinix.webp" alt="Equipos Infinix y repuestos" width="768" height="1376" loading="lazy"><div class="meta"><h3>Infinix</h3><p class="eqt">Consultá por los modelos disponibles.</p><div class="tag">Disponible para retiro y pago en tienda física</div><a class="btn" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20equipos%20Infinix." target="_blank" rel="noopener"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg>Consultar</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="label">Contacto</div>
+    <h2>Cuéntanos qué le pasa a tu equipo.</h2>
+    <div class="contact">
+      <a class="ccard wa" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20mi%20equipo." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg></a>
+      <a class="ccard ig" href="https://www.instagram.com/dingofixoficial/" target="_blank" rel="noopener" aria-label="Ver Instagram de DINGO FIX"><svg class="brand b-ig" aria-hidden="true"><use href="#b-ig"/></svg></a>
+      <a class="ccard ml" href="mailto:dingofixoficial@gmail.com" aria-label="Enviar un correo a DINGO FIX"><svg class="brand b-mail" aria-hidden="true"><use href="#b-mail"/></svg></a>
+    </div>
+    <div class="store"><span><b>Tienda física:</b> Centro Comercial Coche, local 25, frente al Automercado Páramo, a 2 locales del Grupo Zoom.</span><span><b>Horario:</b> de 8:00 a 18:00 h</span></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <img src="assets/img/logo-horizontal-positivo.png" alt="DINGO FIX">
+      <div class="social">
+        <a class="sbtn" href="https://maps.app.goo.gl/Szi8kCyU7XhPTJgE7" target="_blank" rel="noopener" aria-label="Ubicación en Google Maps"><svg class="mp" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></a>
+        <a class="sbtn" href="https://wa.me/584248718771" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg></a>
+        <a class="sbtn" href="https://www.instagram.com/dingofixoficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="brand b-ig" aria-hidden="true"><use href="#b-ig"/></svg></a>
+        <a class="sbtn" href="mailto:dingofixoficial@gmail.com" aria-label="Correo"><svg class="brand b-mail" aria-hidden="true"><use href="#b-mail"/></svg></a>
+      </div>
+    </div>
+    <p>Las marcas mencionadas son propiedad de sus respectivos dueños. DINGO FIX es un servicio técnico independiente y no está afiliado a ellas. © DINGO FIX</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/584248718771?text=Hola%20DINGO%20FIX%2C%20quiero%20consultar%20por%20mi%20equipo." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="brand b-wa" aria-hidden="true"><use href="#b-wa"/></svg></a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Video: carga tras el póster; versión liviana en celular; nada si el usuario ahorra datos ---- */
+  var v = document.getElementById('heroVideo');
+  var conn = navigator.connection || {};
+  if (v && !reduce && !conn.saveData) {
+    var small = window.matchMedia('(max-width: 720px)').matches;
+    v.src = small ? 'assets/video/hero-movil.mp4' : 'assets/video/hero.mp4';
+    v.muted = true;
+    var go = function(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+    v.addEventListener('canplay', go, {once:true});
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(e){
+        if (v.readyState > 2) { e[0].isIntersecting ? go() : v.pause(); }
+      }).observe(v);
+    }
+    v.load();
+  }
+
+  /* ---- Máquina de escribir ---- */
+  var el = document.getElementById('typed');
+  if (!el || reduce) return;
+  var home = 'multimarca';
+  var brands = ['Xiaomi','Samsung','Tecno','iPhone','Infinix','Motorola','ZTE','BLU','Huawei','Honor','Oppo','Realme','Vivo','Redmi','POCO','OnePlus','Google Pixel','LG','Nokia','Alcatel','Sony','Itel','Lenovo'];
+  var TYPE = 70, DEL = 35, HOLD = 1100, HOME_HOLD = 2400;
+  function wait(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+  async function erase(){ while (el.textContent.length) { el.textContent = el.textContent.slice(0,-1); await wait(DEL); } await wait(220); }
+  async function type(w){ for (var i = 1; i <= w.length; i++) { el.textContent = w.slice(0,i); await wait(TYPE); } }
+  (async function loop(){
+    await wait(HOME_HOLD);
+    while (true) {
+      await erase();
+      for (var i = 0; i < brands.length; i++) {
+        await type(brands[i]); await wait(HOLD); await erase();
+      }
+      await type(home); await wait(HOME_HOLD);
+    }
+  })();
+})();
+</script>
+<script>
+(function(){var els=document.querySelectorAll('.io');if(!els.length)return;
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('go')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){
+ if(x.isIntersecting){x.target.classList.remove('go');void x.target.offsetWidth;x.target.classList.add('go')}
+ else{x.target.classList.remove('go')}})},{threshold:.6});
+els.forEach(function(e){io.observe(e)});})();
+</script>
+<script>
+(function(){var v=document.getElementById('pinVideo');if(!v)return;
+var save=navigator.connection&&navigator.connection.saveData,red=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(save||red)return;
+v.src=window.matchMedia('(max-width:720px)').matches?v.dataset.mov:v.dataset.src;
+if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){v.play().catch(function(){})}else{v.pause()}})},{threshold:.25}).observe(v);
+else v.play().catch(function(){});})();
+</script>
+<script>
+(function(){
+var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches,save=navigator.connection&&navigator.connection.saveData;
+document.querySelectorAll('.fc').forEach(function(c){
+ var b=c.querySelector('.tap'),v=c.querySelector('video');
+ b.addEventListener('click',function(){var on=c.classList.toggle('on');b.setAttribute('aria-pressed',on?'true':'false');
+  if(v&&!reduce&&!save){if(on)v.pause();else if(c.dataset.vis==='1')v.play().catch(function(){})}});
+ if(v&&!reduce&&!save&&'IntersectionObserver' in window){
+  new IntersectionObserver(function(es){es.forEach(function(x){
+   if(x.isIntersecting){c.dataset.vis='1';if(!v.src)v.src=v.dataset.src;if(!c.classList.contains('on'))v.play().catch(function(){})}
+   else{c.dataset.vis='0';v.pause()}})},{threshold:.25}).observe(c);
+ }
+});
+var els=document.querySelectorAll('.fc.fio');if(!els.length)return;
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('go')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){
+ if(x.isIntersecting){x.target.classList.remove('go');void x.target.offsetWidth;x.target.classList.add('go')}else{x.target.classList.remove('go')}})},{threshold:.6});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+(function(){var t=document.getElementById('accTrack');if(!t)return;
+var prev=document.getElementById('accPrev'),next=document.getElementById('accNext');
+function step(){var c=t.querySelector('.acard');return c?c.getBoundingClientRect().width+20:280}
+function go(d){var max=t.scrollWidth-t.clientWidth;
+ if(d>0&&t.scrollLeft>=max-4)t.scrollTo({left:0});else if(d<0&&t.scrollLeft<=4)t.scrollTo({left:max});else t.scrollBy({left:d*step()})}
+prev.addEventListener('click',function(){go(-1)});next.addEventListener('click',function(){go(1)});
+t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
+var red=window.matchMedia('(prefers-reduced-motion:reduce)').matches,paused=false,vis=false,timer=null;
+if(red)return;
+['mouseenter','focusin','touchstart','pointerdown'].forEach(function(ev){t.addEventListener(ev,function(){paused=true})});
+['mouseleave','focusout'].forEach(function(ev){t.addEventListener(ev,function(){paused=false})});
+t.addEventListener('touchend',function(){setTimeout(function(){paused=false},6000)});
+if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(t);else vis=true;
+timer=setInterval(function(){if(!paused&&vis&&!document.hidden)go(1)},3800);
+})();
+</script>
+<script>
+(function(){
+var mq=window.matchMedia('(max-width:720px)');
+function build(sel,childSel){var el=document.querySelector(sel);if(!el)return;
+ var kids=el.querySelectorAll(childSel);if(kids.length<2)return;
+ var d=document.createElement('div');d.className='mdots';d.setAttribute('aria-hidden','true');
+ kids.forEach(function(){d.appendChild(document.createElement('i'))});
+ el.parentNode.insertBefore(d,el.nextSibling);
+ var dots=d.children;
+ function upd(){if(!mq.matches)return;var best=0,bd=1e9,r=el.getBoundingClientRect();
+  kids.forEach(function(k,i){var kr=k.getBoundingClientRect();var dist=Math.abs(kr.left-r.left-24);if(dist<bd){bd=dist;best=i}});
+  if(el.scrollLeft+el.clientWidth>=el.scrollWidth-4)best=kids.length-1;
+  for(var i=0;i<dots.length;i++)dots[i].className=i===best?'on':''}
+ el.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});upd();}
+build('.fgrid','.fc');build('.products','.prod');build('.auth .grid','.glass');
+})();
+
+document.querySelectorAll('.fc').forEach(function(c){
+ var t=c.querySelector('.tap'),f=c.querySelector('.qf');
+ if(t){t.addEventListener('click',function(){var on=c.classList.contains('on');t.setAttribute('aria-label',(on?'Volver a la foto: ':'Voltear tarjeta: ')+t.dataset.l)})}
+ if(!f)return;
+ f.addEventListener('submit',function(e){e.preventDefault();
+  var m=f.modelo.value.trim(),q=f.consulta.value.trim();
+  if(!m){f.modelo.classList.add('bad');f.modelo.focus();return}
+  f.modelo.classList.remove('bad');
+  var msg='Hola DINGO FIX, quiero consultar por '+c.dataset.s+'. Modelo: '+m+'.'+(q?' Detalle: '+q+'.':'');
+  window.open('https://wa.me/584248718771?text='+encodeURIComponent(msg),'_blank','noopener');
+ });
+ f.modelo.addEventListener('input',function(){f.modelo.classList.remove('bad')});
+});
+</script>
+</body>
+</html>
